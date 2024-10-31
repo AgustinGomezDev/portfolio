@@ -1,12 +1,48 @@
 ---
+import SectionContainer from '../components/SectionContainer.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import Button from '../components/Button.astro';
+import Code from '../icons/Code.astro'
+import Skill from '../icons/Skill.astro'
+import User from '../icons/User.astro'
 import Layout from '../layouts/Layout.astro';
 import { calculateAge } from '../utils/calculateAge'
+import ProjectCard from '../components/ProjectCard.astro';
 
 const birthdate = new Date('2003-08-21')
 ---
 
 <Layout title="Agustín Gómez | Desarrollador web" description="">
-	<main>
-		
+	<main class="container mx-auto">
+		<SectionContainer class="mt-11" id="hero">
+			<h1 class="font-extrabold text-7xl">Agustín Gómez</h1>
+			<h2 class="font-medium text-4xl">Desarrollador web</h2>
+			<div class="flex items-center gap-3 mt-2">
+				<Button>
+					<span>Github</span>
+				</Button>
+				<Button>
+					<span>LinkedIn</span>
+				</Button>
+				<Button>
+					<span>Curriculum</span>
+				</Button>
+			</div>
+		</SectionContainer>
+		<SectionContainer class="mt-11" id="projects">
+			<SectionTitle title="Proyectos"><Code class="size-6" />  </SectionTitle>
+			<div class="mt-6">
+				<ProjectCard 
+					title="Conga" 
+					description="Juego de cartas en línea inspirado en La Conga, que incluye autenticación de usuarios, modos de juego contra IA y multijugador, creación de partidas públicas y privadas, además de perfiles de usuario con estadísticas y personalización."
+					code="https://github.com/AgustinGomezDev/conga"
+					demo="#"
+					image=""
+					tech={['nextjs', 'typescript', 'nodejs', 'express', 'socketio', 'reactjs', 'tailwindcss']}
+				/>
+			</div>
+		</SectionContainer>
+		<!-- <SectionTitle title="Proyectos"><User class="size-6" />  </SectionTitle> -->
+		<!-- <SectionTitle title="Habilidades"><Skill class="size-6" />  </SectionTitle> -->
 	</main>
 </Layout>

@@ -1,0 +1,56 @@
+---
+import Button from "./Button.astro";
+
+import NextjsIcon from "../icons/tech/Nextjs.astro";
+import TypescriptIcon from "../icons/tech/Typescript.astro";
+import NodejsIcon from "../icons/tech/Nodejs.astro";
+import ExpressIcon from "../icons/tech/Expressjs.astro";
+import SocketioIcon from "../icons/tech/Socketio.astro";
+import ReactjsIcon from "../icons/tech/Reactjs.astro";
+import TailwindcssIcon from "../icons/tech/Tailwindcss.astro";
+
+const icons = {
+    nextjs: NextjsIcon,
+    typescript: TypescriptIcon,
+    nodejs: NodejsIcon,
+    express: ExpressIcon,
+    socketio: SocketioIcon,
+    reactjs: ReactjsIcon,
+    tailwindcss: TailwindcssIcon,
+};
+
+const { title, description, code, demo, image } = Astro.props;
+const tech: Array<keyof typeof icons> = Astro.props.tech;
+
+---
+
+<div class="flex gap-5">
+    <div
+        class="block w-96 h-64 bg-gradient-to-tr from-secondary to-primary rounded-xl"
+    >
+    </div>
+    <div class="flex flex-col justify-between">
+        <div>
+            <h4 class="font-bold text-2xl">{title}</h4>
+            <p class="max-w-md font-regular text-md mt-1">{description}</p>
+        </div>
+        <div class="flex flex-col gap-6">
+            <div class="flex gap-3 items-center">
+                {
+                    tech.map((item) => {
+                        const IconComponent = icons[item];
+                        return IconComponent ? <IconComponent class="size-7" /> : null;
+                    })
+                }
+            </div>
+            <div class=" flex items-center gap-4">
+                <a href={code}>
+                    <Button>Github</Button>
+                </a>
+                <a href={demo}>
+                    <Button>Demo</Button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
