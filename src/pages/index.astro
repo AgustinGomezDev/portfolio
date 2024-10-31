@@ -1,44 +1,114 @@
 ---
-import SectionContainer from '../components/SectionContainer.astro';
-import SectionTitle from '../components/SectionTitle.astro';
-import Button from '../components/Button.astro';
-import Code from '../icons/Code.astro'
-import Skill from '../icons/Skill.astro'
-import User from '../icons/User.astro'
-import Layout from '../layouts/Layout.astro';
-import { calculateAge } from '../utils/calculateAge'
-import ProjectCard from '../components/ProjectCard.astro';
+import SectionContainer from "../components/SectionContainer.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import Button from "../components/Button.astro";
+import Code from "../icons/Code.astro";
+import Skill from "../icons/Skill.astro";
+import User from "../icons/User.astro";
+import Layout from "../layouts/Layout.astro";
+import { calculateAge } from "../utils/calculateAge";
+import ProjectCard from "../components/ProjectCard.astro";
+import GithubIcon from "../icons/tech/Github.astro";
+import LinkedinIcon from "../icons/Linkedin.astro";
+import CurriculumIcon from "../icons/Curriculum.astro";
 
-const birthdate = new Date('2003-08-21')
+const birthdate = new Date("2003-08-21");
 ---
 
 <Layout title="Agustín Gómez | Desarrollador web" description="">
-	<main class="container mx-auto">
+	<main class="px-4">
 		<SectionContainer class="mt-11" id="hero">
-			<h1 class="font-extrabold text-7xl">Agustín Gómez</h1>
-			<h2 class="font-medium text-4xl">Desarrollador web</h2>
+			<h1 class="font-extrabold text-5xl md:text-7xl">Agustín Gómez</h1>
+			<h2 class="font-medium text-2xl md:text-4xl">Desarrollador web</h2>
 			<div class="flex items-center gap-3 mt-2">
 				<Button>
+					<GithubIcon class="size-6" />
 					<span>Github</span>
 				</Button>
 				<Button>
+					<LinkedinIcon class="size-6" />
 					<span>LinkedIn</span>
 				</Button>
 				<Button>
+					<CurriculumIcon class="size-5" />
 					<span>Curriculum</span>
 				</Button>
 			</div>
 		</SectionContainer>
 		<SectionContainer class="mt-11" id="projects">
-			<SectionTitle title="Proyectos"><Code class="size-6" />  </SectionTitle>
-			<div class="mt-6">
-				<ProjectCard 
-					title="Conga" 
+			<SectionTitle title="Proyectos"
+				><Code class="size-6" />
+			</SectionTitle>
+			<div class="mt-6 flex flex-col gap-6">
+				<ProjectCard
+					title="Conga"
 					description="Juego de cartas en línea inspirado en La Conga, que incluye autenticación de usuarios, modos de juego contra IA y multijugador, creación de partidas públicas y privadas, además de perfiles de usuario con estadísticas y personalización."
 					code="https://github.com/AgustinGomezDev/conga"
 					demo="#"
-					image=""
-					tech={['nextjs', 'typescript', 'nodejs', 'express', 'socketio', 'reactjs', 'tailwindcss']}
+					image="https://www.jacksonsquareshopping.co.uk/wp-content/uploads/2016/12/placeholder-1920x1080.png"
+					tech={[
+						"nextjs",
+						"typescript",
+						"nodejs",
+						"express",
+						"socketio",
+						"reactjs",
+						"tailwindcss",
+					]}
+				/>
+				<ProjectCard
+					title="AnunciosUy"
+					description="Plataforma de anuncios clasificados con autenticación de usuarios y funcionalidades para publicar, buscar, editar y eliminar anuncios."
+					code="https://github.com/AgustinGomezDev/anunciosuy"
+					demo="https://www.anunciosuy.com/"
+					image="https://www.jacksonsquareshopping.co.uk/wp-content/uploads/2016/12/placeholder-1920x1080.png"
+					tech={[
+						"vite",
+						"javascript",
+						"axios",
+						"nodejs",
+						"express",
+						"reactjs",
+						"tailwindcss",
+						"firebase",
+						"jsonwebtoken",
+						"mongodb",
+					]}
+				/>
+				<ProjectCard
+					title="Tokytech"
+					description="E-commerce desarrollado con tecnologías frontend y backend, que integra autenticación de usuarios, sistema de sesiones, diseño responsivo, carrito de compras, filtrado de productos por categoría y ordenamiento por precio."
+					code="https://github.com/AgustinGomezDev/tokytech"
+					demo="https://tokytech.vercel.app/"
+					image="https://www.jacksonsquareshopping.co.uk/wp-content/uploads/2016/12/placeholder-1920x1080.png"
+					tech={[
+						"vite",
+						"javascript",
+						"axios",
+						"nodejs",
+						"express",
+						"reactjs",
+						"tailwindcss",
+						"jsonwebtoken",
+						"mongodb",
+						"chai",
+						"swagger",
+						"passport",
+					]}
+				/>
+				<ProjectCard
+					title="Hackathon Cloudinary x Midudev"
+					description="Una aplicación que permite subir una foto y transformarla en una versión monstruosa, eligiendo entre varios personajes. Incluye cambio de fondo a escenarios tenebrosos, descarga de la imagen final y un minijuego interactivo mientras esperas la transformación."
+					code="https://github.com/AgustinGomezDev/hackathon-cloudinary"
+					demo="https://agdev-hackathon-cloudinary.vercel.app/"
+					image="https://www.jacksonsquareshopping.co.uk/wp-content/uploads/2016/12/placeholder-1920x1080.png"
+					tech={[
+						"cloudinary",
+						"nextjs",
+						"typescript",
+						"reactjs",
+						"tailwindcss"
+					]}
 				/>
 			</div>
 		</SectionContainer>

@@ -1,6 +1,8 @@
 ---
 import Button from "./Button.astro";
 
+import { Image } from 'astro:assets';
+
 import NextjsIcon from "../icons/tech/Nextjs.astro";
 import TypescriptIcon from "../icons/tech/Typescript.astro";
 import NodejsIcon from "../icons/tech/Nodejs.astro";
@@ -8,6 +10,18 @@ import ExpressIcon from "../icons/tech/Expressjs.astro";
 import SocketioIcon from "../icons/tech/Socketio.astro";
 import ReactjsIcon from "../icons/tech/Reactjs.astro";
 import TailwindcssIcon from "../icons/tech/Tailwindcss.astro";
+import GithubIcon from "../icons/tech/Github.astro";
+import WebIcon from "../icons/tech/Web.astro";
+import ViteIcon from "../icons/tech/Vite.astro";
+import MongodbIcon from "../icons/tech/Mongodb.astro";
+import AxiosIcon from "../icons/tech/Axios.astro";
+import FirebaseIcon from "../icons/tech/Firebase.astro";
+import JavascriptIcon from "../icons/tech/Javascript.astro";
+import JsonwebtokenIcon from "../icons/tech/Jsonwebtoken.astro";
+import ChaiIcon from "../icons/tech/Chai.astro";
+import SwaggerIcon from "../icons/tech/Swagger.astro";
+import PassportIcon from "../icons/tech/Passport.astro";
+import CloudinaryIcon from "../icons/tech/Cloudinary.astro";
 
 const icons = {
     nextjs: NextjsIcon,
@@ -17,6 +31,16 @@ const icons = {
     socketio: SocketioIcon,
     reactjs: ReactjsIcon,
     tailwindcss: TailwindcssIcon,
+    vite: ViteIcon,
+    mongodb: MongodbIcon,
+    axios: AxiosIcon,
+    firebase: FirebaseIcon,
+    javascript: JavascriptIcon,
+    jsonwebtoken: JsonwebtokenIcon,
+    chai: ChaiIcon,
+    swagger: SwaggerIcon,
+    passport: PassportIcon,
+    cloudinary: CloudinaryIcon
 };
 
 const { title, description, code, demo, image } = Astro.props;
@@ -24,31 +48,38 @@ const tech: Array<keyof typeof icons> = Astro.props.tech;
 
 ---
 
-<div class="flex gap-5">
+<div class="flex flex-col md:flex-row gap-5">
     <div
-        class="block w-96 h-64 bg-gradient-to-tr from-secondary to-primary rounded-xl"
+        class="block w-full md:w-96 h-64 bg-gradient-to-tr from-secondary to-primary rounded-xl overflow-hidden relative"
     >
+    <Image src={image} width={250} height={250} class="absolute bottom-0 right-0 h-full w-full object-cover translate-x-4 translate-y-4 rounded-tl-xl" alt="" />
     </div>
     <div class="flex flex-col justify-between">
         <div>
             <h4 class="font-bold text-2xl">{title}</h4>
-            <p class="max-w-md font-regular text-md mt-1">{description}</p>
+            <p class="max-w-md font-regular text-md mt-1 opacity-80">{description}</p>
         </div>
         <div class="flex flex-col gap-6">
             <div class="flex gap-3 items-center">
                 {
                     tech.map((item) => {
                         const IconComponent = icons[item];
-                        return IconComponent ? <IconComponent class="size-7" /> : null;
+                        return IconComponent ? <IconComponent class="size-7 hover:text-primary" /> : null;
                     })
                 }
             </div>
             <div class=" flex items-center gap-4">
-                <a href={code}>
-                    <Button>Github</Button>
+                <a href={code} target="_blank">
+                    <Button>
+                        <GithubIcon class="size-4" />
+                        <span>Github</span>
+                    </Button>
                 </a>
-                <a href={demo}>
-                    <Button>Demo</Button>
+                <a href={demo} target="_blank">
+                    <Button>
+                        <WebIcon class="size-4" />
+                        <span>Demo</span>
+                    </Button>
                 </a>
             </div>
         </div>
