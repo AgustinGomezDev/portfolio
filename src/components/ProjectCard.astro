@@ -22,6 +22,7 @@ import ChaiIcon from "../icons/tech/Chai.astro";
 import SwaggerIcon from "../icons/tech/Swagger.astro";
 import PassportIcon from "../icons/tech/Passport.astro";
 import CloudinaryIcon from "../icons/tech/Cloudinary.astro";
+import Tooltip from "./Tooltip.astro";
 
 const icons = {
     nextjs: NextjsIcon,
@@ -53,17 +54,23 @@ const tech: Array<keyof typeof icons> = Astro.props.tech;
     >
     <Image src={image} width={250} height={250} class="absolute bottom-0 right-0 h-full w-full object-cover object-left-top translate-x-4 translate-y-4 rounded-tl-xl hover:scale-105 transition-all" alt="" />
     </div>
-    <div class="flex flex-col justify-between">
+    <div class="flex flex-col gap-3 justify-between">
         <div>
             <h4 class="font-bold text-2xl">{title}</h4>
             <p class="max-w-md font-regular text-md mt-1 opacity-80">{description}</p>
         </div>
         <div class="flex flex-col gap-6">
-            <div class="flex gap-3 items-center">
+            <div class="flex flex-wrap gap-3 items-center">
                 {
                     tech.map((item) => {
                         const IconComponent = icons[item];
-                        return IconComponent ? <IconComponent class="size-7 hover:text-primary" /> : null;
+                        return IconComponent 
+                        ? 
+                        <div class="group relative">
+                            <IconComponent class="size-7 hover:text-primary" />
+                            <Tooltip text={item} />
+                        </div>
+                        : null;
                     })
                 }
             </div>
