@@ -12,6 +12,7 @@ import LinkedinIcon from "../icons/Linkedin.astro";
 import CurriculumIcon from "../icons/Curriculum.astro";
 import "aos/dist/aos.css";
 import About from "../components/About.astro";
+import Skills from "../components/Skills.astro";
 ---
 
 <Layout title="Agustín Gómez | Desarrollador web" description="">
@@ -120,11 +121,12 @@ import About from "../components/About.astro";
 				/>
 			</div>
 		</SectionContainer>
-		<!-- <SectionContainer class="mt-11 section" id="habilidades">
+		<SectionContainer class="mt-11 section" id="habilidades">
 			<SectionTitle title="Habilidades">
 				<Skill class="size-6" />
 			</SectionTitle>
-		</SectionContainer> -->
+			<Skills />
+		</SectionContainer>
 		<SectionContainer class="section" id="sobre-mi">
 			<SectionTitle title="Sobre mí">
 				<User class="size-6" />
