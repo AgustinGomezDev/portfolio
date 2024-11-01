@@ -6,19 +6,17 @@ import Code from "../icons/Code.astro";
 import Skill from "../icons/Skill.astro";
 import User from "../icons/User.astro";
 import Layout from "../layouts/Layout.astro";
-import { calculateAge } from "../utils/calculateAge";
 import ProjectCard from "../components/ProjectCard.astro";
 import GithubIcon from "../icons/tech/Github.astro";
 import LinkedinIcon from "../icons/Linkedin.astro";
 import CurriculumIcon from "../icons/Curriculum.astro";
 import "aos/dist/aos.css";
-
-const birthdate = new Date("2003-08-21");
+import About from "../components/About.astro";
 ---
 
 <Layout title="Agustín Gómez | Desarrollador web" description="">
 	<main class="px-4">
-		<SectionContainer class="mt-11 section" id="inicio">
+		<SectionContainer class="section" id="inicio">
 			<h1 class="font-extrabold text-5xl md:text-7xl">Agustín Gómez</h1>
 			<h2 class="font-medium text-2xl md:text-4xl">Desarrollador web</h2>
 			<div class="flex flex-col md:flex-row items-start md:items-center gap-3 mt-2 ">
@@ -40,7 +38,7 @@ const birthdate = new Date("2003-08-21");
 				</Button>
 			</div>
 		</SectionContainer>
-		<SectionContainer class="mt-11 section" id="proyectos">
+		<SectionContainer class="section" id="proyectos">
 			<SectionTitle title="Proyectos">
 				<Code class="size-6" />
 			</SectionTitle>
@@ -122,8 +120,17 @@ const birthdate = new Date("2003-08-21");
 				/>
 			</div>
 		</SectionContainer>
-		<!-- <SectionTitle title="Proyectos"><User class="size-6" />  </SectionTitle> -->
-		<!-- <SectionTitle title="Habilidades"><Skill class="size-6" />  </SectionTitle> -->
+		<!-- <SectionContainer class="mt-11 section" id="habilidades">
+			<SectionTitle title="Habilidades">
+				<Skill class="size-6" />
+			</SectionTitle>
+		</SectionContainer> -->
+		<SectionContainer class="section" id="sobre-mi">
+			<SectionTitle title="Sobre mí">
+				<User class="size-6" />
+			</SectionTitle>
+			<About />
+		</SectionContainer>
 	</main>
 </Layout>
 
