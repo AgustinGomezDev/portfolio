@@ -1,19 +1,34 @@
-<header class="mt-6 sticky top-6 flex justify-center z-20" data-aos="fade-down" data-aos-once="true">
-    <nav class="inline-block bg-darkAccent bg-opacity-80 backdrop-blur-sm rounded-full border border-lightAccent border-opacity-70 shadow-xl">
-        <ul class="flex justify-center items-center py-1 px-5 gap-3 font-medium text-sm md:text-md">
-            <a href="#proyectos">
-                <li id="nav-proyectos" class="hover:text-primary cursor-pointer transition-colors nav-item">Proyectos</li>
-            </a>
-            <a href="#habilidades">
-                <li id="nav-habilidades" class="hover:text-primary cursor-pointer transition-colors nav-item">Habilidades</li>
-            </a>
-            <a href="#sobre-mi">
-                <li id="nav-sobre-mi" class="hover:text-primary cursor-pointer transition-colors nav-item">Sobre mí</li>
-            </a>
-            <a href="#contacto">
-                <li id="nav-contacto" class="hover:text-primary cursor-pointer transition-colors nav-item">Contacto</li>
-            </a>
-        </ul>
+<header
+    class="mt-6 sticky top-6 flex justify-center z-20"
+    data-aos="fade-down"
+    data-aos-once="true"
+>
+    <nav
+        class="bg-darkAccent bg-opacity-80 backdrop-blur-sm rounded-full border border-lightAccent border-opacity-70 shadow-xl flex justify-center items-center py-1 px-5 gap-3 font-medium text-sm md:text-md"
+    >
+        <a
+            href="#proyectos"
+            class="hover:text-primary cursor-pointer transition-colors nav-item"
+            id="nav-proyectos">Proyectos</a
+        >
+
+        <a
+            href="#habilidades"
+            class="hover:text-primary cursor-pointer transition-colors nav-item"
+            id="nav-habilidades">Habilidades</a
+        >
+
+        <a
+            href="#sobre-mi"
+            class="hover:text-primary cursor-pointer transition-colors nav-item"
+            id="nav-sobre-mi">Sobre mí</a
+        >
+
+        <a
+            href="#contacto"
+            class="hover:text-primary cursor-pointer transition-colors nav-item"
+            id="nav-contacto">Contacto</a
+        >
     </nav>
 </header>
 
@@ -25,22 +40,26 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section[id]");
-    const navItems = document.querySelectorAll(".nav-item");
+        const sections = document.querySelectorAll("section[id]");
+        const navItems = document.querySelectorAll(".nav-item");
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                const navItem = document.querySelector(`#nav-${entry.target.id}`);
-                if (entry.isIntersecting && navItem) {
-                    navItems.forEach((item) => item.classList.remove("active"));
-                    navItem.classList.add("active");
-                }
-            });
-        },
-        { threshold: 0.3 }
-    );
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    const navItem = document.querySelector(
+                        `#nav-${entry.target.id}`,
+                    );
+                    if (entry.isIntersecting && navItem) {
+                        navItems.forEach((item) =>
+                            item.classList.remove("active"),
+                        );
+                        navItem.classList.add("active");
+                    }
+                });
+            },
+            { threshold: 0.1 },
+        );
 
-    sections.forEach((section) => observer.observe(section));
-});
+        sections.forEach((section) => observer.observe(section));
+    });
 </script>
