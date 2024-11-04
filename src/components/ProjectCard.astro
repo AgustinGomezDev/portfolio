@@ -75,18 +75,22 @@ const tech: Array<keyof typeof icons> = Astro.props.tech;
                 }
             </div>
             <div class=" flex items-center gap-4">
-                <a href={code} target="_blank">
-                    <Button>
-                        <GithubIcon class="size-4" />
-                        <span>Github</span>
-                    </Button>
-                </a>
-                <a href={demo} target="_blank">
-                    <Button>
-                        <WebIcon class="size-4" />
-                        <span>Demo</span>
-                    </Button>
-                </a>
+                {code && (
+                    <a href={code} target="_blank">
+                        <Button>
+                            <GithubIcon class="size-4" />
+                            <span>Github</span>
+                        </Button>
+                    </a>
+                )}
+                {demo && (
+                    <a href={demo} target="_blank">
+                        <Button>
+                            <WebIcon class="size-4" />
+                            <span>Demo</span>
+                        </Button>
+                    </a>
+                )}
             </div>
         </div>
     </div>
