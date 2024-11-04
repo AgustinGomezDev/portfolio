@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "title": "La Conga",
+        "description": "Juego de cartas en línea inspirado en La Conga, que incluye autenticación de usuarios, modos de juego contra IA y multijugador, creación de partidas públicas y privadas, además de perfiles de usuario con estadísticas y personalización.",
+        "code": "https://github.com/AgustinGomezDev/conga",
+        "image": "https://indetectables.es/wp-content/uploads/2021/03/portada-proximamente.png",
+        "tech": ["nextjs", "typescript", "nodejs", "express", "socketio", "reactjs", "tailwindcss"]
+    },
+    {
+        "id": 2,
+        "title": "AnunciosUy",
+        "description": "Plataforma de anuncios clasificados con autenticación de usuarios y funcionalidades para publicar, buscar, editar y eliminar anuncios.",
+        "code": "https://github.com/AgustinGomezDev/anunciosuy",
+        "demo": "https://www.anunciosuy.com/",
+        "image": "/anunciosuy.webp",
+        "tech": ["vite", "javascript", "axios", "nodejs", "express", "reactjs", "tailwindcss", "firebase", "JWT", "mongodb"]
+    },
+    {
+        "id": 3,
+        "title": "Tokytech",
+        "description": "E-commerce desarrollado con tecnologías frontend y backend, que integra autenticación de usuarios, sistema de sesiones, diseño responsivo, carrito de compras, filtrado de productos por categoría y ordenamiento por precio.",
+        "code": "https://github.com/AgustinGomezDev/tokytech",
+        "demo": "https://tokytech.vercel.app/",
+        "image": "/tokytech.webp",
+        "tech": ["vite", "javascript", "axios", "nodejs", "express", "reactjs", "tailwindcss", "JWT", "mongodb", "chai", "swagger", "passport"]
+    },
+    {
+        "id": 4,
+        "title": "Hackathon Cloudinary x Midudev",
+        "description": "Una aplicación que permite subir una foto y transformarla en una versión monstruosa, eligiendo entre varios personajes. Incluye cambio de fondo a escenarios tenebrosos, descarga de la imagen final y un minijuego interactivo mientras esperas la transformación.",
+        "code": "https://github.com/AgustinGomezDev/hackathon-cloudinary",
+        "demo": "https://agdev-hackathon-cloudinary.vercel.app/",
+        "image": "/hackathon.webp",
+        "tech": ["cloudinary", "nextjs", "typescript", "reactjs", "tailwindcss"]
+    }
+]

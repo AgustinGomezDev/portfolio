@@ -13,6 +13,7 @@ import CurriculumIcon from "../icons/Curriculum.astro";
 import "aos/dist/aos.css";
 import About from "../components/About.astro";
 import Skills from "../components/Skills.astro";
+import projects from "../data/projects.json"
 ---
 
 <Layout title="Agustín Gómez | Desarrollador web" description="">
@@ -44,81 +45,19 @@ import Skills from "../components/Skills.astro";
 				<Code class="size-6" />
 			</SectionTitle>
 			<div class="mt-6 flex flex-col gap-6">
-				<ProjectCard
-					title="Conga"
-					description="Juego de cartas en línea inspirado en La Conga, que incluye autenticación de usuarios, modos de juego contra IA y multijugador, creación de partidas públicas y privadas, además de perfiles de usuario con estadísticas y personalización."
-					code="https://github.com/AgustinGomezDev/conga"
-					demo=""
-					image="https://indetectables.es/wp-content/uploads/2021/03/portada-proximamente.png"
-					tech={[
-						"nextjs",
-						"typescript",
-						"nodejs",
-						"express",
-						"socketio",
-						"reactjs",
-						"tailwindcss",
-					]}
-					dataAos="fade-left"
-				/>
-				<ProjectCard
-					title="AnunciosUy"
-					description="Plataforma de anuncios clasificados con autenticación de usuarios y funcionalidades para publicar, buscar, editar y eliminar anuncios."
-					code="https://github.com/AgustinGomezDev/anunciosuy"
-					demo="https://www.anunciosuy.com/"
-					image="/anunciosuy.webp"
-					tech={[
-						"vite",
-						"javascript",
-						"axios",
-						"nodejs",
-						"express",
-						"reactjs",
-						"tailwindcss",
-						"firebase",
-						"JWT",
-						"mongodb",
-					]}
-					dataAos="fade-left"
-					dataAosDelay="400"
-				/>
-				<ProjectCard
-					title="Tokytech"
-					description="E-commerce desarrollado con tecnologías frontend y backend, que integra autenticación de usuarios, sistema de sesiones, diseño responsivo, carrito de compras, filtrado de productos por categoría y ordenamiento por precio."
-					code="https://github.com/AgustinGomezDev/tokytech"
-					demo="https://tokytech.vercel.app/"
-					image="/tokytech.webp"
-					tech={[
-						"vite",
-						"javascript",
-						"axios",
-						"nodejs",
-						"express",
-						"reactjs",
-						"tailwindcss",
-						"JWT",
-						"mongodb",
-						"chai",
-						"swagger",
-						"passport",
-					]}
-					dataAos="fade-left"
-				/>
-				<ProjectCard
-					title="Hackathon Cloudinary x Midudev"
-					description="Una aplicación que permite subir una foto y transformarla en una versión monstruosa, eligiendo entre varios personajes. Incluye cambio de fondo a escenarios tenebrosos, descarga de la imagen final y un minijuego interactivo mientras esperas la transformación."
-					code="https://github.com/AgustinGomezDev/hackathon-cloudinary"
-					demo="https://agdev-hackathon-cloudinary.vercel.app/"
-					image="/hackathon.webp"
-					tech={[
-						"cloudinary",
-						"nextjs",
-						"typescript",
-						"reactjs",
-						"tailwindcss",
-					]}
-					dataAos="fade-left"
-				/>
+				{projects.map(p => (
+					<ProjectCard
+						key={p.id}
+						id={p.id}
+						title={p.title}
+						description={p.description}
+						code={p.code}
+						demo={p.demo}
+						image={p.image}
+						tech={p.tech}
+						dataAos="fade-left"
+					/>
+				))}
 			</div>
 		</SectionContainer>
 		<SectionContainer class="mt-11 section" id="habilidades">
