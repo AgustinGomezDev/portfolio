@@ -7,7 +7,7 @@
     --textColor: 226, 240, 253;
 }
 
-@media (prefers-color-scheme: light){
+/* @media (prefers-color-scheme: light){
     :root{
         --primary: 66, 131, 193;
         --secondary: 42, 81, 118;
@@ -16,4 +16,4 @@
         --bgColor: 252, 252, 252;
         --textColor: 1, 9, 17;
     }
-}
+} */
