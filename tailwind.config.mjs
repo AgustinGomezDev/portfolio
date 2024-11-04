@@ -4,12 +4,12 @@ export default {
 	theme: {
 		extend: {
 			colors:{
-				primary: "#4283c1",
-				secondary: "#2a5176",
-				lightAccent: "#93b6d6",
-				darkAccent: "#1c242c",
-				bgColor: "#010911",
-				textColor: "#e2f0fd"
+				primary: "rgba(var(--primary))",
+				secondary: "rgba(var(--secondary))",
+				accentPrimary: "rgba(var(--accent-primary))",
+				accentSecondary: "rgba(var(--accent-secondary))",
+				bgColor: "rgba(var(--bgColor))",
+				textColor: "rgba(var(--textColor))"
 			}
 		},
 	},

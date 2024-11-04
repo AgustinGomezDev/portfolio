@@ -1,0 +1,19 @@
+:root{
+    --primary: 66, 131, 193;
+    --secondary: 42, 81, 118;
+    --accent-primary: 147, 182, 214;
+    --accent-secondary: 28, 36, 44;
+    --bgColor: 1, 9, 17;
+    --textColor: 226, 240, 253;
+}
+
+@media (prefers-color-scheme: light){
+    :root{
+        --primary: 66, 131, 193;
+        --secondary: 42, 81, 118;
+        --accent-primary: 34, 91, 143;
+        --accent-secondary: 147, 182, 214;
+        --bgColor: 252, 252, 252;
+        --textColor: 1, 9, 17;
+    }
+}
