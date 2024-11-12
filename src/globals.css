@@ -17,3 +17,56 @@
         --textColor: 1, 9, 17;
     }
 } */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(500px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-500px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fadeInBottom {
+    from {
+        transform: translateY(-500px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.animated-section { opacity: 0; }
+
+.animate-in { animation: fadeIn 0.5s ease forwards; }
+.animate-right { animation: fadeInRight 0.5s ease forwards; }
+.animate-left { animation: fadeInLeft 0.5s ease forwards; }
+.animate-in-bottom { animation: fadeInBottom 0.5s ease forwards; }
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.35s; }
+.delay-3 { animation-delay: 0.5s; }
+.delay-4 { animation-delay: 0.65s; }
+.delay-5 { animation-delay: 0.8s; }

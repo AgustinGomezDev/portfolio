@@ -44,11 +44,11 @@ const icons = {
     cloudinary: CloudinaryIcon
 };
 
-const { title, description, code, demo, image, dataAos, dataAosDelay } = Astro.props;
+const { title, description, code, demo, image } = Astro.props;
 const tech: Array<keyof typeof icons> = Astro.props.tech;
 ---
 
-<div class="flex flex-col md:flex-row gap-5" data-aos={dataAos} data-aos-once="true" data-aos-delay={dataAosDelay ? dataAosDelay : 200}>
+<div class="flex flex-col md:flex-row gap-5 animated-section fade-in-right">
     <div
         class="block w-full md:w-96 h-64 bg-gradient-to-tr from-secondary to-primary rounded-xl overflow-hidden relative"
     >

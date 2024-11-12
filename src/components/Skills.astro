@@ -26,6 +26,7 @@ import FigmaIcon from "../icons/tech/Figma.astro";
 import PhotoshopIcon from "../icons/tech/Photoshop.astro";
 
 import Tooltip from "./Tooltip.astro";
+import Notion from "../icons/tech/Notion.astro";
 
 const programming = {
     javascript: JavascriptIcon,
@@ -60,12 +61,13 @@ const database = {
 const tools = {
     git: GitIcon,
     figma: FigmaIcon,
-    photoshop: PhotoshopIcon
+    photoshop: PhotoshopIcon,
+    notion: Notion
 };
 ---
 
 <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-y-12">
-    <div class="flex flex-col items-center gap-2" data-aos="fade-in" data-aos-once="true" data-aos-delay={100 * 1}>
+    <div class="flex flex-col items-center gap-2 delay-1 animated-section fade-in">
         <h4 class="md:text-xl">Programación</h4>
         <div class="flex items-center gap-3">
             {
@@ -78,7 +80,7 @@ const tools = {
             }
         </div>
     </div>
-    <div class="flex flex-col items-center gap-2" data-aos="fade-in" data-aos-once="true" data-aos-delay={100 * 2}>
+    <div class="flex flex-col items-center gap-2 delay-2 animated-section fade-in">
         <h4 class="md:text-xl">Frontend</h4>
         <div class="flex items-center gap-3">
             {
@@ -91,7 +93,7 @@ const tools = {
             }
         </div>
     </div>
-    <div class="flex flex-col items-center gap-2" data-aos="fade-in" data-aos-once="true" data-aos-delay={100 * 3}>
+    <div class="flex flex-col items-center gap-2 delay-3 animated-section fade-in">
         <h4 class="md:text-xl">Backend</h4>
         <div class="flex items-center gap-3">
             {
@@ -104,7 +106,7 @@ const tools = {
             }
         </div>
     </div>
-    <div class="flex flex-col items-center gap-2" data-aos="fade-in" data-aos-once="true" data-aos-delay={100 * 4}>
+    <div class="flex flex-col items-center gap-2 delay-4 animated-section fade-in">
         <h4 class="md:text-xl">Bases de datos</h4>
         <div class="flex items-center gap-3">
             {
@@ -117,7 +119,7 @@ const tools = {
             }
         </div>
     </div>
-    <div class="flex flex-col items-center gap-2" data-aos="fade-in" data-aos-once="true" data-aos-delay={100 * 5}>
+    <div class="flex flex-col items-center gap-2 delay-5 animated-section fade-in">
         <h4 class="md:text-xl">Herramientas</h4>
         <div class="flex items-center gap-3">
             {
