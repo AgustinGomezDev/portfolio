@@ -10,7 +10,6 @@ import ProjectCard from "../components/ProjectCard.astro";
 import GithubIcon from "../icons/tech/Github.astro";
 import LinkedinIcon from "../icons/Linkedin.astro";
 import CurriculumIcon from "../icons/Curriculum.astro";
-import "aos/dist/aos.css";
 import About from "../components/About.astro";
 import Skills from "../components/Skills.astro";
 import projects from "../data/projects.json"
@@ -57,7 +56,6 @@ import projects from "../data/projects.json"
 						demo={p.demo}
 						image={p.image}
 						tech={p.tech}
-						dataAos="fade-left"
 					/>
 				))}
 			</div>
@@ -76,8 +74,3 @@ import projects from "../data/projects.json"
 		</SectionContainer>
 	</main>
 </Layout>
-
-<script>
-	import AOS from "aos";
-	AOS.init();
-</script>
