@@ -12,7 +12,7 @@ import LinkedinIcon from "../icons/Linkedin.astro";
 import CurriculumIcon from "../icons/Curriculum.astro";
 import About from "../components/About.astro";
 import Skills from "../components/Skills.astro";
-import projects from "../data/projects.json"
+import projects from "../data/projects.json";
 ---
 
 <Layout title="Agustín Gómez | Desarrollador web" description="">
@@ -20,7 +20,7 @@ import projects from "../data/projects.json"
 		<SectionContainer class="section">
 			<h1 class="font-extrabold text-5xl md:text-7xl">Agustín Gómez</h1>
 			<h2 class="font-medium text-2xl md:text-4xl">Desarrollador web</h2>
-			<div class="flex flex-col md:flex-row items-start md:items-center gap-3 mt-2 ">
+			<div class="flex flex-col md:flex-row items-start md:items-center gap-3 mt-2">
 				<a href="https://github.com/AgustinGomezDev" target="_blank">
 					<Button>
 						<GithubIcon class="size-6" />
@@ -46,18 +46,20 @@ import projects from "../data/projects.json"
 				<Code class="size-6" />
 			</SectionTitle>
 			<div class="mt-6 flex flex-col gap-6">
-				{projects.map(p => (
-					<ProjectCard
-						key={p.id}
-						id={p.id}
-						title={p.title}
-						description={p.description}
-						code={p.code}
-						demo={p.demo}
-						image={p.image}
-						tech={p.tech}
-					/>
-				))}
+				{
+					projects.map((p) => (
+						<ProjectCard
+							key={p.id}
+							id={p.id}
+							title={p.title}
+							description={p.description}
+							code={p.code}
+							demo={p.demo}
+							image={p.image}
+							tech={p.tech}
+						/>
+					))
+				}
 			</div>
 		</SectionContainer>
 		<SectionContainer class="mt-11 section" id="habilidades">
@@ -76,25 +78,30 @@ import projects from "../data/projects.json"
 </Layout>
 
 <script>
-	const animatedSections = document.querySelectorAll('.animated-section');
+	// ---- Animate sections on scroll
+	const animatedSections = document.querySelectorAll(".animated-section");
 
-if (animatedSections.length > 0) {
-    const observer = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    if (entry.target.classList.contains('fade-in-left')) entry.target.classList.add('animate-left');
-                    if (entry.target.classList.contains('fade-in-right')) entry.target.classList.add('animate-right');
-                    if (entry.target.classList.contains('fade-in-bottom')) entry.target.classList.add('animate-in-bottom');
-                    if (entry.target.classList.contains('fade-in')) entry.target.classList.add('animate-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        {
-            threshold: 0.45,
-        }
-    );
-    animatedSections.forEach((section) => observer.observe(section));
-}
+	if (animatedSections.length > 0) {
+		const observer = new IntersectionObserver(
+			(entries, observer) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						if (entry.target.classList.contains("fade-in-left"))
+							entry.target.classList.add("animate-left");
+						if (entry.target.classList.contains("fade-in-right"))
+							entry.target.classList.add("animate-right");
+						if (entry.target.classList.contains("fade-in-bottom"))
+							entry.target.classList.add("animate-in-bottom");
+						if (entry.target.classList.contains("fade-in"))
+							entry.target.classList.add("animate-in");
+						observer.unobserve(entry.target);
+					}
+				});
+			},
+			{
+				threshold: 0.45,
+			},
+		);
+		animatedSections.forEach((section) => observer.observe(section));
+	}
 </script>
